@@ -25,6 +25,15 @@ jobs:
       - name: Install Kaggle API
         run: pip install kaggle
 
+      - name: Configure Kaggle API Credentials
+        env:
+          KAGGLE_USERNAME: ${{ secrets.KAGGLE_USERNAME }}
+          KAGGLE_KEY: ${{ secrets.KAGGLE_KEY }}
+        run: |
+          mkdir -p ~/.kaggle
+          echo '{"username":"'$KAGGLE_USERNAME'","key":"'$KAGGLE_KEY'"}' > ~/.kaggle/kaggle.json
+          chmod 600 ~/.kaggle/kaggle.json
+
       - name: Make Deployment Script Executable
         run: chmod +x deploy_to_kaggle.sh
 
