@@ -6,7 +6,7 @@ on:
     branches:
       - master
       - main
-  # Allow manual triggering from the GitHub UI
+  # Allow manual triggering from the GitHub Actions UI
   workflow_dispatch:
 
 jobs:
@@ -25,21 +25,11 @@ jobs:
       - name: Install Kaggle API
         run: pip install kaggle
 
-      - name: Configure Kaggle API Credentials
-        env:
-          KAGGLE_USERNAME: ${{ secrets.KAGGLE_USERNAME }}
-          KAGGLE_KEY: ${{ secrets.KAGGLE_KEY }}
-        run: |
-          mkdir -p ~/.kaggle
-          echo '{"username":"'$KAGGLE_USERNAME'","key":"'$KAGGLE_KEY'"}' > ~/.kaggle/kaggle.json
-          chmod 600 ~/.kaggle/kaggle.json
-
       - name: Make Deployment Script Executable
         run: chmod +x deploy_to_kaggle.sh
 
       - name: Execute Kaggle Deployment
         env:
-          # These secrets must be added to your GitHub Repository Settings
           KAGGLE_USERNAME: ${{ secrets.KAGGLE_USERNAME }}
           KAGGLE_KEY: ${{ secrets.KAGGLE_KEY }}
         run: ./deploy_to_kaggle.sh
