@@ -1,0 +1,15 @@
+{
+  "id": "enockmokua/uberjugaad-rag-agent",
+  "title": "UberJugaad: Phase 3 - Executive RAG Agent",
+  "code_file": "rag_agent.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": "false",
+  "enable_gpu": "false",
+  "enable_tpu": "false",
+  "enable_internet": "true",
+  "dataset_sources": ["enockmokua/uberjugaad-processed-erp-churn-data"],
+  "competition_sources": [],
+  "kernel_sources": [],
+  "model_sources": []
+}

@@ -1,0 +1,12 @@
+{
+  "id": "enockmokua/uberjugaad-process-mining",
+  "title": "UberJugaad: Phase 1 - Process Mining",
+  "code_file": "process_discovery.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": "false",
+  "enable_gpu": "false",
+  "enable_tpu": "false",
+  "enable_internet": "true",
+  "dataset_sources": ["enockmokua/uberjugaad-processed-erp-churn-data"]
+}
